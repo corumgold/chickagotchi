@@ -1,8 +1,8 @@
-const { Sequelize } = require("sequelize");
+const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("postgres://localhost:5432/chickenoregg");
+const db = new Sequelize("postgres://localhost:5432/chickenegg");
 
-const Chicken = sequelize.define("chicken", {
+const Chicken = db.define("chicken", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -10,6 +10,6 @@ const Chicken = sequelize.define("chicken", {
 });
 
 module.exports = {
-  sequelize,
+  db,
   Chicken,
 };

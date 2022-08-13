@@ -1,7 +1,7 @@
 const express = require("express");
 const router = require("./chicken_routes");
 const app = express();
-const db = require("./db");
+const { db } = require("./db");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
