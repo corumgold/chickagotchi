@@ -1,6 +1,6 @@
 const html = require("html-template-tag");
 
-function chickenMain() {
+module.exports = function chickenMain() {
   return html`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -19,8 +19,4 @@ function chickenMain() {
         </form>
       </body>
     </html> `;
-}
-
-module.exports = {
-  chickenMain,
 };
