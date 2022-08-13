@@ -13,9 +13,9 @@ function chickenMain() {
         <h1>Welcome to Which Came First!</h1>
         <h2>Pick a name for your first chicken!</h2>
         <p class="Emoji">🐔</p>
-        <form action="POST" method="/new/">
-          <input type="text" placeholder="Chicken Name" />
-          <input type="submit" value="Cluck Cluck!" />
+        <form action="/new/" method="POST">
+          <input name="name" type="text" placeholder="Chicken Name" />
+          <button type="submit" class="btn btn-primary">Cluck Cluck!</button>
         </form>
       </body>
     </html> `;

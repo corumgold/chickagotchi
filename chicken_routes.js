@@ -6,4 +6,8 @@ router.get("/", (req, res) => {
   res.send(views.chickenMain());
 });
 
+router.post("/new", async (req, res) => {
+  res.send(req.body);
+});
+
 module.exports = router;
