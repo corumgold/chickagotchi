@@ -7,6 +7,10 @@ const Chicken = db.define("chicken", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  age: {
+    type: Sequelize.ENUM("chick", "adult", "deceased"),
+    defaultValue: "chick",
+  },
 });
 
 module.exports = {
