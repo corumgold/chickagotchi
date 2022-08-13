@@ -1,6 +1,6 @@
 const html = require("html-template-tag");
 
-module.exports = function newChicken() {
+module.exports = function newChicken(chickenName) {
   return html`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -13,6 +13,7 @@ module.exports = function newChicken() {
         <h1>Congratulations!</h1>
         <h2>A new chicken has been born!</h2>
         <p class="Emoji">🐣</p>
+        <p>It's name is ${chickenName}</p>
       </body>
     </html> `;
 };
