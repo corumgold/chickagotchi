@@ -22,7 +22,7 @@ module.exports = function chickenMain(chicken) {
       <body>
         <h1>${chicken.name}</h1>
         <h2>This is your chicken! Take good care of it!</h2>
-        <p class="Emoji">🐥</p>
+        <p class="emoji">🐥</p>
         <p>${message}</p>
         <p>
           (Your chicken thrives off of your love and attention! The best way to
