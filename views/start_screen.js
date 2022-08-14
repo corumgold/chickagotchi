@@ -25,8 +25,13 @@ module.exports = function startScreen() {
               <p>Please pick a name for your chicken!</p>
               <p class="emoji">🥚</p>
               <form action="/new" method="POST">
-                <input name="name" type="text" placeholder="Chicken Name" />
-                <button type="submit">Cluck Cluck!</button>
+                <input
+                  id="name-input"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                />
+                <button type="submit">Cluck!</button>
               </form>
             </div>
           </div>

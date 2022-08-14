@@ -8,7 +8,8 @@ body,
 #console,
 #screen,
 #screen-border,
-#buttons {
+#buttons,
+#screen form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,4 +75,14 @@ h1 {
 #faq-text p {
   text-align: left;
   line-height: 1.5em;
+}
+
+#name-input {
+  width: 150px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#screen form button {
+  padding: 5px
 }
