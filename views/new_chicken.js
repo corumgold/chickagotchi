@@ -1,6 +1,8 @@
 const html = require("html-template-tag");
 
 module.exports = function newChicken(chickenName) {
+  let newChickenLink = `http://localhost:3000/${chickenName}`;
+
   return html`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -14,6 +16,12 @@ module.exports = function newChicken(chickenName) {
         <h2>A new chicken has been born!</h2>
         <p class="Emoji">🐣</p>
         <p>It's name is ${chickenName}</p>
+        <button id="go-to-chicken">Bawk Bawk!</button>
+        <script type="text/javascript">
+          document.getElementById("go-to-chicken").onclick = function () {
+            location.href = "${newChickenLink}";
+          };
+        </script>
       </body>
     </html> `;
 };
