@@ -28,16 +28,18 @@ module.exports = function chickenMain(chicken) {
       <body>
         <div id="console">
           <h1>Chickagotchi</h1>
-          <div id="screen">
-            <p class="emoji">🐥</p>
-            <p>${message}</p>
+          <div id="screen-border">
+            <div id="screen">
+              <p class="emoji">🐥</p>
+              <p>${message}</p>
+            </div>
+          </div>
+          <div id="buttons">
+            <button>New</button>
+            <button>Test</button>
+            <button>FAQ</button>
           </div>
         </div>
-        <p>
-          (Your chicken thrives off of your love and attention! The best way to
-          take good care of it is to make sure you visit your chicken at least
-          twice per day)
-        </p>
       </body>
     </html> `;
 };

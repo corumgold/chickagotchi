@@ -1,11 +1,13 @@
 * {
   margin: 0;
   font-family: "Press Start 2P", cursive;
+  text-align: center;
 }
 
 body,
 #console,
-#screen {
+#screen,
+#screen-border {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +19,7 @@ body,
   width: 600px;
   height: 700px;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background-color: chartreuse;
+  background-color: #5a4bb2;
   border: 2px solid black;
 }
 
@@ -28,12 +30,32 @@ h1 {
 
 #screen {
   background-color: #ababab;
+  /* border: 2px solid black; */
+  border-radius: 20px;
+  width: 300px;
+  height: 325px;
+}
+
+#screen-border {
+  background-color: #827ba9;
   border: 2px solid black;
   border-radius: 20px;
-  width: 350px;
-  height: 375px;
+  width: 325px;
+  height: 350px;
+  margin-bottom: 30px;
 }
 
 .emoji {
   font-size: 140px;
+}
+
+#buttons button {
+  background: none;
+  background-color: #827ba9;
+  height: 75px;
+  width: 75px;
+  border-radius: 1000px;
+  cursor: pointer;
+  outline: inherit;
+  margin-bottom: -50px;
 }
