@@ -22,7 +22,7 @@ module.exports = function chickenList(chickens) {
           <div id="screen-border">
             <div id="screen">
               <div id="faq-text">
-                <ul>
+                <ul id="chicken-list">
                   ${chickens.map((chicken) => {
                     return html`<li>
                       <form action="/chickens/${chicken.name}/">
@@ -38,7 +38,9 @@ module.exports = function chickenList(chickens) {
             <form action="/">
               <button type="submit">New</button>
             </form>
-            <button>Test</button>
+            <form action="/chickens">
+              <button type="submit">Coop</button>
+            </form>
             <form action="/faq">
               <button type="submit">FAQ</button>
             </form>
