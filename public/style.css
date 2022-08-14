@@ -1,14 +1,39 @@
 * {
   margin: 0;
+  font-family: "Press Start 2P", cursive;
 }
 
-body {
+body,
+#console,
+#screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+#console {
+  margin-top: 10px;
+  width: 600px;
+  height: 700px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background-color: chartreuse;
+  border: 2px solid black;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+#screen {
+  background-color: #ababab;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 350px;
+  height: 375px;
+}
+
 .emoji {
-  font-size: 70px;
+  font-size: 140px;
 }
