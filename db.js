@@ -6,10 +6,15 @@ const Chicken = db.define("chicken", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
+    unique: true,
   },
   age: {
     type: Sequelize.ENUM("chick", "adult", "deceased"),
     defaultValue: "chick",
+  },
+  health: {
+    type: Sequelize.INTEGER,
+    defaultValue: 4,
   },
 });
 
