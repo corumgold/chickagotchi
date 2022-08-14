@@ -1,5 +1,5 @@
 // const express = require("express");
-const { faq, startScreen, chickenMain } = require("./views");
+const { faq, startScreen, chickenMain, chickenList } = require("./views");
 const router = require("express").Router();
 const { Chicken } = require("./db");
 
@@ -15,6 +15,11 @@ router.post("/new", async (req, res) => {
 
 router.get("/faq", (req, res) => {
   res.send(faq());
+});
+
+router.get("/chickens", async (req, res) => {
+  const allChickens = await Chicken.findAll();
+  res.send(chickenList(allChickens));
 });
 
 router.get("/chickens/:chickenName", async (req, res) => {
