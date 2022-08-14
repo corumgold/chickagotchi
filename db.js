@@ -22,8 +22,16 @@ const Chicken = db.define("chicken", {
   },
 });
 
-Chicken.prototype.feed = function () {
-  this.lastFed = new Date();
+Chicken.prototype.feed = async function () {
+  const result = await Chicken.update(
+    { lastFed: new Date() },
+    {
+      where: {
+        id: this.id,
+      },
+    }
+  );
+  console.log("FED!");
 };
 
 module.exports = {

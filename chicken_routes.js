@@ -2,7 +2,6 @@
 const { newChicken, startScreen, chickenMain } = require("./views");
 const router = require("express").Router();
 const { Chicken } = require("./db");
-const path = require("path");
 
 router.get("/", (req, res) => {
   res.send(startScreen());
@@ -21,7 +20,7 @@ router.get("/:chickenName", async (req, res) => {
       name: chickenName,
     },
   });
-  res.sendFile(path.join(__dirname, './public', 'chicken_main.html'));
+  res.send(chickenMain(chicken));
 });
 
 module.exports = router;

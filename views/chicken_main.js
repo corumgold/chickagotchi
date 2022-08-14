@@ -1,7 +1,12 @@
 const html = require("html-template-tag");
 const { Chicken } = require("../db");
+const { adjustAge } = require("../helper_funcs");
 
-module.exports = function chickenMain(chickenName) {
+module.exports = function chickenMain(chicken) {
+  //change chicken age (if needed)
+  adjustAge(chicken);
+  //feed chicken on refresh
+  chicken.feed();
   return html`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -11,8 +16,13 @@ module.exports = function chickenMain(chickenName) {
         <title>Congratulations!</title>
       </head>
       <body>
-        <h1>${chickenName}</h1>
-        <h2>This is your chicken! Take care of it!</h2>
+        <h1>${chicken.name}</h1>
+        <h2>This is your chicken! Take good care of it!</h2>
+        <p>
+          Your chicken thrives off of your love and attention! The best way to
+          take good care of it is to make sure you visit this home page at least
+          once per day :-)
+        </p>
         <p class="Emoji">🐥</p>
       </body>
     </html> `;
