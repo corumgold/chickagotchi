@@ -26,14 +26,14 @@ module.exports = function startScreen() {
               <p class="emoji">🥚</p>
               <form action="/new" method="POST">
                 <input name="name" type="text" placeholder="Chicken Name" />
-                <button type="submit" class="btn btn-primary">
-                  Cluck Cluck!
-                </button>
+                <button type="submit">Cluck Cluck!</button>
               </form>
             </div>
           </div>
           <div id="buttons">
-            <button>New</button>
+            <form action="/">
+              <button type="submit">New</button>
+            </form>
             <button>Test</button>
             <button>FAQ</button>
           </div>

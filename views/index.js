@@ -1,9 +1,9 @@
 const startScreen = require("./start_screen");
-const newChicken = require("./new_chicken");
+const faq = require("./faq");
 const chickenMain = require("./chicken_main")
 
 module.exports = {
   startScreen,
-  newChicken,
+  faq,
   chickenMain,
 };

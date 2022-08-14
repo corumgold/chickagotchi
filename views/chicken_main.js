@@ -35,7 +35,9 @@ module.exports = function chickenMain(chicken) {
             </div>
           </div>
           <div id="buttons">
-            <button>New</button>
+            <form action="/">
+              <button type="submit">New</button>
+            </form>
             <button>Test</button>
             <button>FAQ</button>
           </div>
