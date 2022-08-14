@@ -16,7 +16,15 @@ const Chicken = db.define("chicken", {
     type: Sequelize.INTEGER,
     defaultValue: 4,
   },
+  lastFed: {
+    type: Sequelize.DATE,
+    defaultValue: Sequelize.NOW,
+  },
 });
+
+Chicken.prototype.feed = function () {
+  this.lastFed = new Date();
+};
 
 module.exports = {
   db,

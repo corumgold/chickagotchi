@@ -20,6 +20,7 @@ router.get("/:chickenName", async (req, res) => {
       name: chickenName,
     },
   });
+  console.log('🦀', chicken)
   res.send(chickenMain(chickenName));
 });
 
