@@ -35,7 +35,9 @@ module.exports = function startScreen() {
               <button type="submit">New</button>
             </form>
             <button>Test</button>
-            <button>FAQ</button>
+            <form action="/faq">
+              <button type="submit">FAQ</button>
+            </form>
           </div>
         </div>
       </body>
