@@ -10,4 +10,4 @@ html<h2>Background</h2>
   <li>Basic HTML/CSS.</li>
 </ul>
 
-<p>This file assumes a local PostgreSQL database called 'chickenegg'</p>
+<p>This file assumes a local PostgreSQL database called <strong>'chickagotchi'</strong></p>

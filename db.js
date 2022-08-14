@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const db = new Sequelize("postgres://localhost:5432/chickenegg");
+const db = new Sequelize("postgres://localhost:5432/chickagotchi");
 
 const Chicken = db.define("chicken", {
   name: {
