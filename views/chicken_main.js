@@ -1,4 +1,5 @@
 const html = require("html-template-tag");
+const { Chicken } = require("../db");
 
 module.exports = function chickenMain(chickenName) {
   return html`<!DOCTYPE html>
