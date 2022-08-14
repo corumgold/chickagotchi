@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 router.post("/new", async (req, res) => {
   const chickenName = req.body.name;
   const newChick = await Chicken.create({ name: chickenName });
-  res.send(newChicken(chickenName));
+  res.send(chickenMain(newChick));
 });
 
 router.get("/:chickenName", async (req, res) => {
