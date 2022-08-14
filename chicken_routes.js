@@ -1,5 +1,5 @@
 // const express = require("express");
-const { newChicken, startScreen, chickenMain } = require("./views");
+const { faq, startScreen, chickenMain } = require("./views");
 const router = require("express").Router();
 const { Chicken } = require("./db");
 
@@ -11,6 +11,10 @@ router.post("/new", async (req, res) => {
   const chickenName = req.body.name;
   const newChick = await Chicken.create({ name: chickenName });
   res.redirect(`/${newChick.name}`);
+});
+
+router.get("/faq", (req, res) => {
+  res.send(faq());
 });
 
 router.get("/:chickenName", async (req, res) => {

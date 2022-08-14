@@ -51,10 +51,9 @@ h1 {
 }
 
 #buttons {
-    margin-bottom: -50px;
-    flex-direction: row;
+  margin-bottom: -50px;
+  flex-direction: row;
 }
-
 
 #buttons button {
   background: none;
@@ -65,4 +64,14 @@ h1 {
   cursor: pointer;
   outline: inherit;
   margin: 0 10px;
+}
+
+#faq-text {
+  overflow: scroll;
+  padding: 5px 15px;
+}
+
+#faq-text p {
+  text-align: left;
+  line-height: 1.5em;
 }
