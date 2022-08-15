@@ -15,7 +15,7 @@ module.exports = function startScreen() {
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
-        <title>Congratulations!</title>
+        <title>New Chicken</title>
       </head>
       <body>
         <div id="console">

@@ -14,7 +14,7 @@ module.exports = function chickenList(chickens) {
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
-        <title>FAQ</title>
+        <title>Chicken Coop</title>
       </head>
       <body>
         <div id="console">
