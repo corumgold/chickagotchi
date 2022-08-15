@@ -26,7 +26,7 @@ module.exports = function chickenList(chickens) {
                   ${chickens.map((chicken) => {
                     return html`<li>
                       <form action="/chickens/${chicken.name}/">
-                        <button type="submit">${chicken.name}</button>
+                        <button type="submit">${chicken.name} ${chicken.emoji}</button>
                       </form>
                     </li>`;
                   })}
