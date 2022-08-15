@@ -16,3 +16,5 @@
   <li>Emojis that update depending on a chicken's age (newborn, chick, adult)</li>
   <li>A fun "Tamogatchi" style interface.</li>
 </ul>
+
+![Alt text](public/V1_Screenshots.png "Version 1 Screenshots")
