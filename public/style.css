@@ -84,5 +84,24 @@ h1 {
 }
 
 #screen form button {
-  padding: 5px
+  padding: 5px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul form button {
+  background: none;
+  background-color: transparent;
+  width: 160px;
+  height: 40px;
+  font-size: 25px;
+  cursor: pointer;
+  outline: inherit;
+}
+
+li {
+  margin: 10px 0;
 }
