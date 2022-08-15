@@ -3,9 +3,12 @@ const { Chicken } = require("./db");
 const adjustAge = async function (chicken) {
   let currentAgeInDays = (Date.now() - chicken.createdAt) / 86400000;
   //If the chicken is over 3 hours old, it's a chick
-  if (currentAgeInDays >= 0.125) {
+  if (currentAgeInDays >= 0.125 && currentAgeInDays < 3) {
     let result = await Chicken.update(
-      { age: "chick" },
+      {
+        age: "chick",
+        emoji: "🐥",
+      },
       {
         where: {
           id: chicken.id,
@@ -16,7 +19,10 @@ const adjustAge = async function (chicken) {
   //If the chicken is over 3 days old, it's an adult
   else if (currentAgeInDays >= 3) {
     let result = await Chicken.update(
-      { age: "adult" },
+      {
+        age: "adult",
+        emoji: "🐓",
+      },
       {
         where: {
           id: chicken.id,
@@ -24,7 +30,15 @@ const adjustAge = async function (chicken) {
       }
     );
   }
-  console.log('🔔', chicken.name, 'is a', chicken.age, 'they are', currentAgeInDays, 'days old')
+  console.log(
+    "🔔",
+    chicken.name,
+    "is a",
+    chicken.age,
+    "they are",
+    currentAgeInDays,
+    "days old"
+  );
   return chicken.age;
 };
 
@@ -40,7 +54,29 @@ const greetingMessage = function (chicken) {
   }
 };
 
+const emojiGenerator = async function (chicken) {
+  try {
+    let chickenAge = await adjustAge(chicken);
+    let emoji = await function () {
+      switch (true) {
+        case chickenAge === "newborn":
+          return "🐣";
+        case chickenAge === "chick":
+          return "🐥";
+        case chickenAge === "adult":
+          return "🐓";
+        case chickenAge === "deceased":
+          return "🪦";
+      }
+    };
+    return emoji;
+  } catch (e) {
+    return "darn!";
+  }
+};
+
 module.exports = {
   adjustAge,
   greetingMessage,
+  emojiGenerator,
 };

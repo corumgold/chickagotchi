@@ -1,6 +1,10 @@
 const html = require("html-template-tag");
 const { Chicken } = require("../db");
-const { adjustAge, greetingMessage } = require("../helper_funcs");
+const {
+  adjustAge,
+  greetingMessage,
+  emojiGenerator,
+} = require("../helper_funcs");
 
 module.exports = function chickenMain(chicken) {
   //change chicken age (if needed)
@@ -30,7 +34,7 @@ module.exports = function chickenMain(chicken) {
           <h1>Chickagotchi</h1>
           <div id="screen-border">
             <div id="screen">
-              <p class="emoji">🐥</p>
+              <p class="emoji">${chicken.emoji}</p>
               <p>${message}</p>
             </div>
           </div>

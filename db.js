@@ -12,6 +12,10 @@ const Chicken = db.define("chicken", {
     type: Sequelize.ENUM("newborn", "chick", "adult", "deceased"),
     defaultValue: "newborn",
   },
+  emoji: {
+    type: Sequelize.ENUM("🐣", "🐥", "🐓", "🪦"),
+    defaultValue: "🐣",
+  },
   health: {
     type: Sequelize.INTEGER,
     defaultValue: 4,
