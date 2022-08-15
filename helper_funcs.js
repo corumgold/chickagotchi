@@ -2,8 +2,19 @@ const { Chicken } = require("./db");
 
 const adjustAge = async function (chicken) {
   let currentAgeInDays = (Date.now() - chicken.createdAt) / 86400000;
+  //If the chicken is over 3 hours old, it's a chick
+  if (currentAgeInDays >= 0.125) {
+    let result = await Chicken.update(
+      { age: "chick" },
+      {
+        where: {
+          id: chicken.id,
+        },
+      }
+    );
+  }
   //If the chicken is over 3 days old, it's an adult
-  if (currentAgeInDays >= 3) {
+  else if (currentAgeInDays >= 3) {
     let result = await Chicken.update(
       { age: "adult" },
       {
@@ -13,7 +24,8 @@ const adjustAge = async function (chicken) {
       }
     );
   }
-  console.log(currentAgeInDays);
+  console.log('🔔', chicken.name, 'is a', chicken.age, 'they are', currentAgeInDays, 'days old')
+  return chicken.age;
 };
 
 const greetingMessage = function (chicken) {

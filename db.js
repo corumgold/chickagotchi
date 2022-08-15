@@ -9,8 +9,8 @@ const Chicken = db.define("chicken", {
     unique: true,
   },
   age: {
-    type: Sequelize.ENUM("chick", "adult", "deceased"),
-    defaultValue: "chick",
+    type: Sequelize.ENUM("newborn", "chick", "adult", "deceased"),
+    defaultValue: "newborn",
   },
   health: {
     type: Sequelize.INTEGER,
