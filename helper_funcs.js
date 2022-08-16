@@ -51,17 +51,16 @@ const greetingMessage = function (chicken) {
     `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`,
   ];
 
+  let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
+
   function getRandomGreeting(greetingArr) {
     const randomIndex = Math.floor(Math.random() * greetingArr.length);
     const greeting = greetingArr[randomIndex];
     return greeting;
   }
 
-  //time since page visit in days
-  let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
-
   switch (true) {
-    case chicken.age === 'newborn':
+    case chicken.age === "newborn":
       return `${chicken.name} is still getting used to being out of their shell!`;
     case timeSinceVisit <= 0.5:
       return getRandomGreeting(healthyGreetings);
@@ -75,7 +74,7 @@ const greetingMessage = function (chicken) {
 const emojiGenerator = async function (chicken) {
   try {
     let chickenAge = await adjustAge(chicken);
-    let emoji = await function () {
+    let emoji = function () {
       switch (true) {
         case chickenAge === "newborn":
           return "🐣";
