@@ -18,7 +18,9 @@ router.get("/faq", (req, res) => {
 });
 
 router.get("/chickens", async (req, res) => {
-  const allChickens = await Chicken.findAll();
+  const allChickens = await Chicken.findAll({
+    order: [["createdAt", "DESC"]],
+  });
   res.send(chickenList(allChickens));
 });
 
