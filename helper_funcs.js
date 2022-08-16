@@ -43,10 +43,24 @@ const adjustAge = async function (chicken) {
 };
 
 const greetingMessage = function (chicken) {
+  const healthyGreetings = [
+    `${chicken.name} is happy and healthy! You're doing a great job, farmer!`,
+    `Life on the farm is great for ${chicken.name}! Thanks for checking in!`,
+    `Howdy! ${chicken.name} is feeling like a million 'clucks' today!`,
+    `Yeehaw! ${chicken.name} is feeling great and enjoying the day!`,
+    `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`
+  ];
+
+  function getRandomGreeting(greetingArr) {
+    const randomIndex = Math.floor(Math.random() * greetingArr.length);
+    const greeting = greetingArr[randomIndex];
+    return greeting;
+  }
+
   //time since page visit in days
   let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
   if (timeSinceVisit <= 0.5) {
-    return `${chicken.name} is happy and healthy! You're doing a great job, farmer!`;
+    return getRandomGreeting(healthyGreetings);
   } else if (timeSinceVisit < 1) {
     return `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`;
   } else if (timeSinceVisit < 2) {
