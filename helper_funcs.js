@@ -48,7 +48,7 @@ const greetingMessage = function (chicken) {
     `Life on the farm is great for ${chicken.name}! Thanks for checking in!`,
     `Howdy! ${chicken.name} is feeling like a million 'clucks' today!`,
     `Yeehaw! ${chicken.name} is feeling great and enjoying the day!`,
-    `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`
+    `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`,
   ];
 
   function getRandomGreeting(greetingArr) {
@@ -59,12 +59,16 @@ const greetingMessage = function (chicken) {
 
   //time since page visit in days
   let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
-  if (timeSinceVisit <= 0.5) {
-    return getRandomGreeting(healthyGreetings);
-  } else if (timeSinceVisit < 1) {
-    return `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`;
-  } else if (timeSinceVisit < 2) {
-    return `${chicken.name} is sick with loneliness! Make sure you are giving them enough love, or they might die!`;
+
+  switch (true) {
+    case chicken.age === 'newborn':
+      return `${chicken.name} is still getting used to being out of their shell!`;
+    case timeSinceVisit <= 0.5:
+      return getRandomGreeting(healthyGreetings);
+    case timeSinceVisit < 1:
+      return `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`;
+    case timeSinceVisit < 2:
+      return `${chicken.name} is sick with loneliness! Make sure you are giving them enough love, or they might die!`;
   }
 };
 
