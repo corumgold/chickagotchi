@@ -51,6 +51,21 @@ const greetingMessage = function (chicken) {
     `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`,
   ];
 
+  const unhealthyGreetings = [
+    `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`,
+    `${chicken.name} has missed you and is so glad you are back!`,
+    `Next time you are gone for so long, make sure to give ${chicken.name} a heads up!`,
+    `Where have you been!? ${chicken.name} was starting to get worried!`,
+    `You and ${chicken.name} have some catching up to do!`,
+  ];
+
+  const sickGreetings = [
+    `${chicken.name} is sick with loneliness! Make sure you are giving them enough love, or they might die!`,
+    `${chicken.name} has been worried sick that you weren't coming back!`,
+    `Be careful next time! Remember, ${chicken.name} can't survive without your attention!`,
+    `${chicken.name} looks terrible...`,
+  ];
+
   let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
 
   function getRandomGreeting(greetingArr) {
@@ -65,9 +80,9 @@ const greetingMessage = function (chicken) {
     case timeSinceVisit <= 0.5:
       return getRandomGreeting(healthyGreetings);
     case timeSinceVisit < 1:
-      return `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`;
+      return getRandomGreeting(unhealthyGreetings);
     case timeSinceVisit < 2:
-      return `${chicken.name} is sick with loneliness! Make sure you are giving them enough love, or they might die!`;
+      return getRandomGreeting(sickGreetings);
   }
 };
 
