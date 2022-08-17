@@ -16,7 +16,7 @@ body,
   align-items: center;
 }
 #console {
-  margin-top: 10px;
+  margin: 10%;
   width: 600px;
   height: 700px;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
