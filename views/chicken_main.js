@@ -5,15 +5,22 @@ const {
   adjustAge,
   greetingMessage,
   emojiGenerator,
+  checkHealth,
 } = require("../helper_funcs");
 
 module.exports = function chickenMain(chicken) {
-  //change chicken age (if needed)
-  adjustAge(chicken);
-  //feed chicken on refresh
-  chicken.feed();
+  let message;
+  checkHealth(chicken);
 
-  let message = greetingMessage(chicken);
+  if (chicken.alive) {
+    //change chicken age (if needed)
+    adjustAge(chicken);
+    //feed chicken on refresh
+    chicken.feed();
+    message = greetingMessage(chicken);
+  } else {
+    message = `RIP ${chicken.name}`;
+  }
 
   return console(html`
     <p class="emoji">${chicken.emoji}</p>

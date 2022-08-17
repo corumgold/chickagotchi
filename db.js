@@ -16,9 +16,9 @@ const Chicken = db.define("chicken", {
     type: Sequelize.ENUM("🐣", "🐥", "🐓", "🪦"),
     defaultValue: "🐣",
   },
-  health: {
-    type: Sequelize.INTEGER,
-    defaultValue: 4,
+  alive: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true,
   },
   lastFed: {
     type: Sequelize.DATE,
