@@ -1,4 +1,4 @@
-# chicken-or-egg-game
+# chickagotchi
 
 <h2>Background</h2>
 
