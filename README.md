@@ -2,7 +2,7 @@
 
 <h2>Background</h2>
 
-<p>I created this app so I could get some extra practice with what I have learned so far in Fullstack Academy's Junior Phase.</p>
+<p>I created this app so I could get some extra practice with database querying.</p>
 <p>A few of the concepts that I will demonstrate in this project are:</p>
 <ul>
   <li>Database management using Sequalize and PostgreSQL.</li>
