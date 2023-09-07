@@ -1,5 +1,4 @@
 // const express = require("express");
-const { faq, startScreen, chickenMain, chickenList } = require("./views");
 const router = require("express").Router();
 const { Chicken } = require("./db");
 

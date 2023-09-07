@@ -11,7 +11,8 @@ const checkHealth = function (chicken) {
 // -----------------------------------------------------------------------------------
 
 const adjustAge = async function (chicken) {
-  const currentAgeInDays = (Date.now() - chicken.createdAt) / 86400000;
+  const currentAgeInDays =
+    (Date.now() - new Date(chicken.createdAt)) / 86400000;
   //If the chicken is over 3 hours old, it's a chick
   if (currentAgeInDays >= 0.125 && currentAgeInDays < 3) {
     await Chicken.update(
@@ -40,15 +41,6 @@ const adjustAge = async function (chicken) {
       }
     );
   }
-  console.log(
-    "🔔",
-    chicken.name,
-    "is a",
-    chicken.age,
-    "they are",
-    currentAgeInDays,
-    "days old"
-  );
   return chicken.age;
 };
 
@@ -105,15 +97,15 @@ const greetingMessage = function (chicken) {
 
   switch (true) {
     case chicken.age === "deceased":
-      return `${chicken.name} has passed away. RIP.`;
+      return `${chicken.emoji} ${chicken.name} has passed away. RIP.`;
     case chicken.age === "newborn":
-      return `${chicken.name} is still getting used to being out of their shell!`;
+      return `${chicken.emoji} ${chicken.name} is still getting used to being out of their shell!`;
     case timeSinceVisit <= 0.5:
-      return getRandomGreeting(healthyGreetings);
+      return chicken.emoji + " " + getRandomGreeting(healthyGreetings);
     case timeSinceVisit < 1:
-      return getRandomGreeting(unhealthyGreetings);
+      return chicken.emoji + " " + getRandomGreeting(unhealthyGreetings);
     case timeSinceVisit <= 2:
-      return getRandomGreeting(sickGreetings);
+      return chicken.emoji + " " + getRandomGreeting(sickGreetings);
   }
 };
 
@@ -143,5 +135,5 @@ module.exports = {
   greetingMessage,
   emojiGenerator,
   initDeath,
-  checkHealth
+  checkHealth,
 };

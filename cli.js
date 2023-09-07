@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { default: axios } = require("axios");
 const { program } = require("commander");
-const { greetingMessage } = require("./helper_funcs");
+const { greetingMessage, adjustAge } = require("./helper_funcs");
 
 const apiUrl = "http://localhost:3000";
 
@@ -33,6 +33,7 @@ program
         console.log(
           chickens
             .map((chicken) => {
+              adjustAge(chicken);
               return greetingMessage(chicken);
             })
             .join("\n")
