@@ -5,7 +5,8 @@
     "node-time-ago": "^1.0.0",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3",
-    "sequelize": "^6.21.3"
+    "sequelize": "^6.21.3",
+    "sqlite3": "^5.1.6"
   },
   "scripts": {
     "start": "nodemon app.js"
