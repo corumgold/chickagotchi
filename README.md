@@ -20,6 +20,15 @@ If you are on the original main branch, you can view the app in your browser at 
 - The app no longer uses PostgreSQL and instead uses SQLite.
 
 ![Alt text](public/V2_Screenshots.png "Version 2 Screenshots")
+
+## Version 1.1 (Updated 8/16/2022)
+
+- Moved CSS declarations into a LESS file.
+- Added more greetings for each chicken emotion.
+- Small style changes.
+- Change views to be more concise (see source code).
+- Added death functionality.
+
 ## List of Key Features at First Launch
 
 - The ability to add any number of chickens to watch after.
