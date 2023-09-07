@@ -65,19 +65,39 @@ const initDeath = async function (chicken) {
 
 const greetingMessage = function (chicken) {
   const healthyGreetings = [
-    `${chicken.name} is happy and healthy! You're doing a great job, farmer!`,
-    `Life on the farm is great for ${chicken.name}! Thanks for checking in!`,
-    `Howdy! ${chicken.name} is feeling like a million 'clucks' today!`,
-    `Yeehaw! ${chicken.name} is feeling great and enjoying the day!`,
-    `"Bawk Bawk!" (That's ${chicken.name}'s way of saying "I love you!")`,
+    `${chicken.name} is doing fantastic today!\nKeep up the good work, farmer!`,
+    `The farm life is treating ${chicken.name}\nexceptionally well! Thanks for your care!`,
+    `Greetings, dear farmer! ${chicken.name} is\nclucking with joy today!`,
+    `${chicken.name} is having an egg-citing day\non the farm!`,
+    `"Bawk Bawk!" (That's ${chicken.name}'s way of\nsaying "I'm one happy bird!")`,
+    `Cluck cluck! ${chicken.name} couldn't be\nhappier right now!`,
+    `${chicken.name} is spreading feathers of\nhappiness all around the coop!`,
+    `Hooray for ${chicken.name}! It's a\nsunny-side-up kind of day!`,
+    `${chicken.name} is doing absolutely splendidly!\nYour farming skills are top-notch!`,
+    `The farm is a paradise for ${chicken.name}!\nThanks for all your dedication!`,
+    `Howdy there! ${chicken.name} is feeling like\na million 'clucks' today!`,
+    `Yeehaw! ${chicken.name} is having a blast\nand enjoying the day to the fullest!`,
+    `Guess what? "${chicken.name}!" That's the sound\nof happiness on the farm!`,
+    `${chicken.name} is spreading joy and feathers\neverywhere they go!`,
+    `High-five, farmer! ${chicken.name} is living\nthe chicken dream today!`,
+    `A round of applause for ${chicken.name}!\nThey're on cloud nine!`,
+    `Chick-a-dee-doo! ${chicken.name} is starting\nthe day with a song and a smile!`,
+    `Feathers in the air, joy everywhere!\n${chicken.name} is the happiest bird on the farm!`,
+    `${chicken.name} is clucking with delight, thanks\nto your care and attention!`,
   ];
 
   const unhealthyGreetings = [
-    `${chicken.name} has been a bit lonely today... Make sure to give them extra love today!`,
-    `${chicken.name} has missed you and is so glad you are back!`,
-    `Next time you are gone for so long, make sure to give ${chicken.name} a heads up!`,
-    `Where have you been!? ${chicken.name} was starting to get worried!`,
-    `You and ${chicken.name} have some catching up to do!`,
+    `${chicken.name} has been a bit lonely today...\nMake sure to give them extra\nlove today!`,
+    `Next time you are gone for so long, make sure to\ngive ${chicken.name} a heads up!`,
+    `Where have you been!? ${chicken.name} was starting\nto get worried!`,
+    `You and ${chicken.name} have some catching up to\ndo!`,
+    `${chicken.name} is feeling a bit under the weather\ntoday, but your presence\nbrightens their day!`,
+    `Don't worry, farmer! ${chicken.name} is feeling a\nlittle off, but your care\nalways helps.`,
+    `Life on the farm has its ups and downs, and today,\n${chicken.name} is\nexperiencing a bit of a down. Your love makes it\nbetter!`,
+    `${chicken.name} is having a clucking day, but your\ncompany makes it all\nbetter!`,
+    `${chicken.name} may not be feeling their best, but\nwith your care, they're on\nthe road to recovery!`,
+    `A little bird told me that ${chicken.name} isn't\nfeeling 100%, but your love\nwill surely lift their spirits!`,
+    `${chicken.name} is taking it easy today, but your\npresence makes all the\ndifference!`,
   ];
 
   const sickGreetings = [
@@ -87,7 +107,8 @@ const greetingMessage = function (chicken) {
     `${chicken.name} looks terrible...`,
   ];
 
-  let timeSinceVisit = (Date.now() - chicken.lastFed) / 86400000;
+  let timeSinceVisit = (Date.now() - new Date(chicken.lastFed)) / 86400000;
+  console.log(timeSinceVisit);
 
   function getRandomGreeting(greetingArr) {
     const randomIndex = Math.floor(Math.random() * greetingArr.length);
