@@ -16,10 +16,13 @@ Chickagotchi is a magical place where your chickens don't need anything
 more than a little bit of your love and attention to thrive.
 
 All you need to do to keep your chickens happy and healthy
-is check on them at least twice per day.
+is virtually feed them at least twice per day.
 
 If you neglect your chickens they may become sick, and if you neglect them for too long,
-they will pass on into the great big chicken coop in the sky!`);
+they will pass on into the great big chicken coop in the sky!
+
+You can start a command by typing "./cli.js" followed by the command name.
+To see a list of command names, type "./cli.js help".`);
     console.log("\n\n");
   });
 
