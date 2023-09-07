@@ -14,7 +14,7 @@ const PORT = 3000;
 
 const initialize = async () => {
   try {
-    await db.sync({ force: false });
+    await db.sync({ force: false, logging: false });
 
     app.listen(PORT, function () {
       console.log(`🔊 Listening at http://localhost:${PORT}`);

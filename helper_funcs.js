@@ -104,6 +104,8 @@ const greetingMessage = function (chicken) {
   }
 
   switch (true) {
+    case chicken.age === "deceased":
+      return `${chicken.name} has passed away. RIP.`;
     case chicken.age === "newborn":
       return `${chicken.name} is still getting used to being out of their shell!`;
     case timeSinceVisit <= 0.5:
@@ -115,31 +117,31 @@ const greetingMessage = function (chicken) {
   }
 };
 
-// const emojiGenerator = async function (chicken) {
-//   try {
-//     let chickenAge = await adjustAge(chicken);
-//     let emoji = function () {
-//       switch (true) {
-//         case chickenAge === "newborn":
-//           return "🐣";
-//         case chickenAge === "chick":
-//           return "🐥";
-//         case chickenAge === "adult":
-//           return "🐓";
-//         case chickenAge === "deceased":
-//           return "🪦";
-//       }
-//     };
-//     return emoji;
-//   } catch (e) {
-//     return "darn!";
-//   }
-// };
+const emojiGenerator = async function (chicken) {
+  try {
+    let chickenAge = await adjustAge(chicken);
+    let emoji = function () {
+      switch (true) {
+        case chickenAge === "newborn":
+          return "🐣";
+        case chickenAge === "chick":
+          return "🐥";
+        case chickenAge === "adult":
+          return "🐓";
+        case chickenAge === "deceased":
+          return "🪦";
+      }
+    };
+    return emoji;
+  } catch (e) {
+    return "darn!";
+  }
+};
 
 module.exports = {
   adjustAge,
   greetingMessage,
-  // emojiGenerator,
+  emojiGenerator,
   initDeath,
   checkHealth
 };
