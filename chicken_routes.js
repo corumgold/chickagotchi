@@ -32,7 +32,7 @@ router.put("/chickens/:chickenName/feed", async (req, res, next) => {
       },
     });
     await chicken.update({ lastFed: new Date() });
-    res.status(200).send(`You fed ${chickenName}!`);
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }
@@ -47,7 +47,7 @@ router.delete("/chickens/:chickenName", async (req, res, next) => {
       },
     });
     await chicken.destroy();
-    res.status(200).send("Chicken deleted successfully");
+    res.sendStatus(200);
   } catch (error) {
     next(error);
   }
