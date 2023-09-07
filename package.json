@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "cli": "./cli.js faq ./cli.js help"
+    "cli": "./cli.js faq"
   },
   "bin": {
     "my-cli": "./cli.js"

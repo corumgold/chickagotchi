@@ -55,6 +55,33 @@ program
   });
 
 program
+  .command("age <name>")
+  .description("Display the age of one of your chickens")
+  .action(async (name) => {
+    console.log("\n\n");
+    try {
+      const response = await axios.get(apiUrl + `/chickens/${name}/age`);
+
+      if (response.status === 200) {
+        const chicken = response.data;
+        adjustAge(chicken);
+        const chickenAge =
+          (Date.now() - new Date(chicken.createdAt)) / 86400000;
+        console.log(
+          `${chicken.emoji} ${chicken.name} is ${chickenAge.toFixed(
+            1
+          )} days old.`
+        );
+      } else {
+        console.error("Error fetching chicken!");
+      }
+    } catch (error) {
+      console.error("Error fetching chicken!", error);
+    }
+    console.log("\n\n");
+  });
+
+program
   .command("hatch <name>")
   .description("Create a new chicken with the given name")
   .action(async (name) => {

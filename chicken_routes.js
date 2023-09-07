@@ -23,6 +23,20 @@ router.get("/chickens", async (req, res, next) => {
   }
 });
 
+router.get("/chickens/:chickenName/age", async (req, res, next) => {
+  try {
+    const chickenName = req.params.chickenName;
+    const chicken = await Chicken.findOne({
+      where: {
+        name: chickenName,
+      },
+    });
+    res.status(200).send(chicken);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.put("/chickens/:chickenName/feed", async (req, res, next) => {
   try {
     const chickenName = req.params.chickenName;
