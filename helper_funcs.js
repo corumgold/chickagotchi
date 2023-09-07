@@ -108,7 +108,6 @@ const greetingMessage = function (chicken) {
   ];
 
   let timeSinceVisit = (Date.now() - new Date(chicken.lastFed)) / 86400000;
-  console.log(timeSinceVisit);
 
   function getRandomGreeting(greetingArr) {
     const randomIndex = Math.floor(Math.random() * greetingArr.length);
