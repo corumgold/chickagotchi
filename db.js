@@ -3,6 +3,7 @@ const Sequelize = require("sequelize");
 const db = new Sequelize({
   dialect: "sqlite",
   storage: "database.sqlite",
+  logging: false,
 });
 
 const Chicken = db.define("chicken", {
@@ -28,18 +29,6 @@ const Chicken = db.define("chicken", {
     defaultValue: Sequelize.NOW,
   },
 });
-
-Chicken.prototype.feed = async function () {
-  const result = await Chicken.update(
-    { lastFed: new Date() },
-    {
-      where: {
-        id: this.id,
-      },
-    }
-  );
-  console.log("FED!");
-};
 
 module.exports = {
   db,

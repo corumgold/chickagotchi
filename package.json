@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "axios": "^1.5.0",
+    "commander": "^11.0.0",
     "express": "^4.18.1",
     "html-template-tag": "^4.0.1",
     "node-time-ago": "^1.0.0",
@@ -9,6 +11,10 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "cli": "./cli.js faq"
+  },
+  "bin": {
+    "my-cli": "./cli.js"
   }
 }
